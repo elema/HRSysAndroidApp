@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7edb698cbd1c0d8738e1c9824890cccfc7c002a3">
+        <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_748bb91fec4f404d02e9778ac185f4347b5c770c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_93d941d0fb50f98c30c8fae319228fdf0089652a/classes.dex" />
+    </item>
+
+</items>
