@@ -4,8 +4,10 @@
 
 This is a personal project for implementing a Android app which manages Employee Information
 
-- Add, Change and Delete Employee Information
-- Calculation Payroll List / Employees' Age/DOB List
+- Add, Change Employee Information (Three Type Employee)
+- Calculation Payroll List 
+- Calculate Age 
+- View / Search Employee List (Edit/Delete) 
 
 ## Screenshot
 
@@ -17,4 +19,5 @@ This is a personal project for implementing a Android app which manages Employee
 <p align="center">
   <img src="screenshot/Screenshot_4.png" width="200"/>
   <img src="screenshot/Screenshot_5.png" width="200"/>
+  <img src="screenshot/Screenshot_6.png" width="200"/>
 </p>

@@ -172,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
                             else
                                 selDate.append(monthOfYear + 1).append("-");
                             if (dayOfMonth < 10)
-                                selDate.append("0").append(dayOfMonth + 1);
+                                selDate.append("0").append(dayOfMonth);
                             else
-                                selDate.append(dayOfMonth + 1);
+                                selDate.append(dayOfMonth);
                             //Log.d(TAG,"Selected Date :" + selDate.toString());
                             txtDOB.setText(selDate);
                         }
@@ -356,15 +356,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // calculate year button
-        Button btnCalcYear = (Button) findViewById(R.id.btnCalcYear);
-        btnCalcYear.setOnClickListener(new View.OnClickListener() {
+        // calculate age button
+        Button btnCalcAge = (Button) findViewById(R.id.btnCalcAge);
+        btnCalcAge.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, InfoListActivity.class);
-                intent.putExtra("viewType",1);
-                startActivityForResult(intent,  GOTO_INFOLIST);
+//                Intent intent = new Intent(MainActivity.this, InfoListActivity.class);
+//                intent.putExtra("viewType",1);
+//                startActivityForResult(intent,  GOTO_INFOLIST);
+                if(txtDOB.getText().toString().equals("")) {
+                    alertMessage(MainActivity.this,"Alert", "Please fill Employee's Date of Birth ");
+                    txtDOB.findFocus();
+                    return;
+                }
+                Calendar calendar = Calendar.getInstance();
+                Integer currentYear = calendar.get(Calendar.YEAR);
+                String[] dateArr = txtDOB.getText().toString().split("-");
+                Integer birthYear = Integer.parseInt(dateArr[0]);
+                Integer age = currentYear - birthYear;
+                txtAge.setText(age.toString());
             }
         });
 
@@ -450,12 +461,6 @@ public class MainActivity extends AppCompatActivity {
         Boolean isValid = true;
         String msg = "";
 
-//        Log.d(TAG,"txtName :" +txtName.getText().toString());
-//        Log.d(TAG,"txtAge :" +txtAge.getText().toString());
-//        Log.d(TAG,"txtDOB :" +txtDOB.getText().toString());
-//        Log.d(TAG,"txtCountry :" +txtCountry.getText().toString());
-//        Log.d(TAG,"salary :" +txtSalaryHoursSchool.getText().toString());
-//        Log.d(TAG,"bonus :" +txtBonusRate.getText().toString());
         if(txtName.getText().toString().equals("")) {
             msg = "Please fill Employee's Name ";
             txtName.findFocus();

@@ -301,8 +301,8 @@
             android:layout_weight="0.07" />
 
         <Button
-            android:id="@+id/btnCalcYear"
-            android:text="View Employees' Age/DOB"
+            android:id="@+id/btnCalcAge"
+            android:text="Calc Age"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/button_size"
             android:layout_weight="0.07" />

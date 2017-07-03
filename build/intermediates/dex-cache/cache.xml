@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
+        jar="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_93d941d0fb50f98c30c8fae319228fdf0089652a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.0"
-        sha1="7edb698cbd1c0d8738e1c9824890cccfc7c002a3">
+        revision="25.0.3"
+        sha1="73f3f162feee03cf94c6fd87fdca993e7b1b35ae">
         <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_748bb91fec4f404d02e9778ac185f4347b5c770c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/mac/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_93d941d0fb50f98c30c8fae319228fdf0089652a/classes.dex" />
+        revision="25.0.3"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="/GitHub/HRSysAndroidApp/HRSysAndroidApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.6.2_5b3e5cf9d065112e077b69570116ae6bf89f72c6/classes.dex" />
     </item>
 
 </items>

@@ -3,6 +3,7 @@ package com.hosung.hrsys.hrsysandapp;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -67,7 +68,9 @@ public class Employee implements IDisplayable, Serializable {
 	}
 
 	public int calcBirthYear(){
-        return (2016 - this.age);
+		Calendar calendar = Calendar.getInstance();
+		int currentYear = calendar.get(Calendar.YEAR);
+        return (currentYear - this.age);
     }
 
     public int calcEaringings(){
