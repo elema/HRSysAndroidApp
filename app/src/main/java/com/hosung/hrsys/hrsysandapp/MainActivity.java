@@ -241,6 +241,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = "";
                 if (isEdit) {
                     if (currentEmployee instanceof FullTime) {
+                        if(!isValidRecord(0)) return;
+
                         FullTime empRef = (FullTime) currentEmployee;
                         empRef.setName(txtName.getText().toString());
                         empRef.setAge(Integer.parseInt(txtAge.getText().toString()));
@@ -251,6 +253,8 @@ public class MainActivity extends AppCompatActivity {
 
                         msg = "FullTime Employee Record is changed";
                     } else if (currentEmployee instanceof PartTime) {
+                        if(!isValidRecord(1)) return;
+
                         PartTime empRef = (PartTime) currentEmployee;
                         empRef.setName(txtName.getText().toString());
                         empRef.setAge(Integer.parseInt(txtAge.getText().toString()));
@@ -261,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
 
                         msg = "FullTime Employee Record is changed";
                     } else if (currentEmployee instanceof Intern) {
+                        if(!isValidRecord(2)) return;
+
                         Intern empRef = (Intern) currentEmployee;
                         empRef.setName(txtName.getText().toString());
                         empRef.setAge(Integer.parseInt(txtAge.getText().toString()));
@@ -281,14 +287,10 @@ public class MainActivity extends AppCompatActivity {
                             && (txtMake.getText().toString()!=null && !txtMake.getText().toString().equals(""))){
                         v1 = new Vehicle(txtPlate.getText().toString(), txtMake.getText().toString());
                     }
-//                    Log.d(TAG,"txtName :" +txtName.getText().toString());
-//                    Log.d(TAG,"txtAge :" +txtAge.getText().toString());
-//                    Log.d(TAG,"txtDOB :" +txtDOB.getText().toString());
-//                    Log.d(TAG,"txtCountry :" +txtCountry.getText().toString());
-//                    Log.d(TAG,"salary :" +txtSalaryHoursSchool.getText().toString());
-//                    Log.d(TAG,"bonus :" +txtBonusRate.getText().toString());
                     if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioFullTime){
                         // FullTime
+                        if(!isValidRecord(0)) return;
+
                         FullTime ft = new FullTime(txtName.getText().toString(),
                                 Integer.parseInt(txtAge.getText().toString()),
                                 txtDOB.getText().toString(),
@@ -304,6 +306,8 @@ public class MainActivity extends AppCompatActivity {
                         msg = "FullTime Employee Record is added";
                     } else if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioPartTime){
                         // PartTime
+                        if(!isValidRecord(1)) return;
+
                         PartTime pt = new PartTime(txtName.getText().toString(),
                                 Integer.parseInt(txtAge.getText().toString()),
                                 txtDOB.getText().toString(),
@@ -319,6 +323,8 @@ public class MainActivity extends AppCompatActivity {
                         msg = "PartTime Employee Record is added";
                     } else if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioIntern){
                         // Intern
+                        if(!isValidRecord(2)) return;
+
                         Intern it = new Intern(txtName.getText().toString(),
                                 Integer.parseInt(txtAge.getText().toString()),
                                 txtDOB.getText().toString(),
@@ -337,7 +343,6 @@ public class MainActivity extends AppCompatActivity {
                     alertMessage(MainActivity.this, "Alert", msg);
             }
         });
-
 
         // calculate payroll button
         Button btnCalcPayroll = (Button) findViewById(R.id.btnCalcPayroll);
@@ -439,6 +444,61 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         saveSharedPreferences(MainActivity.this);
         super.onDestroy();
+    }
+
+    private Boolean isValidRecord(Integer employeeType){
+        Boolean isValid = true;
+        String msg = "";
+
+//        Log.d(TAG,"txtName :" +txtName.getText().toString());
+//        Log.d(TAG,"txtAge :" +txtAge.getText().toString());
+//        Log.d(TAG,"txtDOB :" +txtDOB.getText().toString());
+//        Log.d(TAG,"txtCountry :" +txtCountry.getText().toString());
+//        Log.d(TAG,"salary :" +txtSalaryHoursSchool.getText().toString());
+//        Log.d(TAG,"bonus :" +txtBonusRate.getText().toString());
+        if(txtName.getText().toString().equals("")) {
+            msg = "Please fill Employee's Name ";
+            txtName.findFocus();
+            isValid = false;
+        }
+        else if(txtAge.getText().toString().equals("")) {
+            msg = "Please fill Employee's Age ";
+            txtAge.findFocus();
+            isValid = false;
+        }
+        else if(txtDOB.getText().toString().equals("")) {
+            msg = "Please fill Employee's Date of Birth ";
+            txtDOB.findFocus();
+            isValid = false;
+        }
+        else if(txtCountry.getText().toString().equals("")) {
+            msg = "Please fill Employee's Country ";
+            txtCountry.findFocus();
+            isValid = false;
+        }
+        else if(txtSalaryHoursSchool.getText().toString().equals("")) {
+            if(employeeType==1)
+                msg = "Please fill Employee's Hours ";
+            else if(employeeType==2)
+                msg = "Please fill Employee's School ";
+            else
+                msg = "Please fill Employee's Salary ";
+            txtSalaryHoursSchool.findFocus();
+            isValid = false;
+        }
+        else if(employeeType!=2 && txtBonusRate.getText().toString().equals("")) {
+            if(employeeType==1)
+                msg = "Please fill Employee's Bonus ";
+            else
+                msg = "Please fill Employee's Rate ";
+            txtBonusRate.findFocus();
+            isValid = false;
+        }
+
+        if(!isValid) {
+            alertMessage(MainActivity.this,"Alert", msg);
+        }
+        return isValid;
     }
 
     public void clearField(boolean shouldClearName){

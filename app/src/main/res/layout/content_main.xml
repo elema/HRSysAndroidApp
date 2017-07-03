@@ -302,7 +302,7 @@
 
         <Button
             android:id="@+id/btnCalcYear"
-            android:text="Calc Year"
+            android:text="View Employees' Age/DOB"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/button_size"
             android:layout_weight="0.07" />

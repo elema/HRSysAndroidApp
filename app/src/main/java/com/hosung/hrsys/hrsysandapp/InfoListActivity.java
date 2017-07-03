@@ -44,7 +44,7 @@ public class InfoListActivity extends AppCompatActivity {
 
         viewType = getIntent().getIntExtra("viewType", 0);
         if(viewType==1){
-            toolbar_info_list_title.setText("Calculation Year");
+            toolbar_info_list_title.setText("View Employees' Age/DOB");
             RelativeLayout rlTotalPayroll = (RelativeLayout) findViewById(R.id.rlTotalPayroll);
             rlTotalPayroll.setVisibility(View.GONE);
         } else {
